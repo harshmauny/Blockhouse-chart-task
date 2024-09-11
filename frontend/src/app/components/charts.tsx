@@ -38,7 +38,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export const CandleStickChartComponent = ({ data }: { data: CandleData[] }) => {
   const newData = CandleStickDataTransform(data);
   return (
-    <div className="chart bg-white  md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-12">
       <h2 className="text-center font-semibold">Scatter Chart</h2>
       <CanvasJSChart options={newData} />
     </div>
@@ -47,9 +47,9 @@ export const CandleStickChartComponent = ({ data }: { data: CandleData[] }) => {
 
 export function LineChartComponent({ data }: { data: LineChartData }) {
   return (
-    <div className="chart bg-white  md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-12">
       <h2 className="text-center font-semibold">Line Chart</h2>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
           data={data.labels.map((label, index) => ({
             name: label,
@@ -70,9 +70,9 @@ export function LineChartComponent({ data }: { data: LineChartData }) {
 
 export function BarChartComponent({ data }: { data: BarChartData }) {
   return (
-    <div className="chart bg-white  md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-12">
       <h2 className="text-center font-semibold">Bar Chart</h2>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={400}>
         <BarChart
           data={data.labels.map((label, index) => ({
             name: label,
@@ -95,7 +95,7 @@ export function PieChartComponent({ data }: { data: PieChartData }) {
   return (
     <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Pie Chart</h2>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
             data={data.labels.map((label, index) => ({
