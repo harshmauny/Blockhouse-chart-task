@@ -13,37 +13,14 @@ import {
   CartesianGrid,
 } from "recharts";
 import CanvasJSReact from "@canvasjs/react-charts";
+import { CandleStickDataTransform } from "../util/chartsDataUtil";
 
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-const options = (data: CandleData[]) => {
-  return {
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
-    animationEnabled: true,
-    exportEnabled: true,
-    data: [
-      {
-        type: "candlestick",
-        dataPoints: data.map((item: any) => {
-          return {
-            x: new Date(item.x), // Convert string to Date object
-            y: [item.open, item.close, item.low, item.high], // Create the y array with open, high, low, close
-          };
-        }),
-      },
-    ],
-  };
-};
-
-interface LineChartData {
+export interface LineChartData {
   labels: string[];
   data: number[];
 }
 
-interface BarChartData extends LineChartData {}
-
-interface PieChartData extends LineChartData {}
-interface CandleData {
+export interface CandleData {
   x: string;
   open: number;
   high: number;
@@ -51,15 +28,22 @@ interface CandleData {
   close: number;
 }
 
-export function CandleStickChartComponent({ data }: { data: CandleData[] }) {
-  const newData = options(data);
+interface BarChartData extends LineChartData {}
+
+interface PieChartData extends LineChartData {}
+
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+export const CandleStickChartComponent = ({ data }: { data: CandleData[] }) => {
+  const newData = CandleStickDataTransform(data);
   return (
     <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Scatter Chart</h2>
       <CanvasJSChart options={newData} />
     </div>
   );
-}
+};
 
 export function LineChartComponent({ data }: { data: LineChartData }) {
   return (
