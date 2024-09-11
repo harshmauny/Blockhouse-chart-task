@@ -54,7 +54,7 @@ interface CandleData {
 export function CandleStickChartComponent({ data }: { data: CandleData[] }) {
   const newData = options(data);
   return (
-    <div className="chart bg-white lg:m-0 md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Scatter Chart</h2>
       <CanvasJSChart options={newData} />
     </div>
@@ -63,7 +63,7 @@ export function CandleStickChartComponent({ data }: { data: CandleData[] }) {
 
 export function LineChartComponent({ data }: { data: LineChartData }) {
   return (
-    <div className="chart bg-white lg:m-0 md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Line Chart</h2>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
@@ -86,7 +86,7 @@ export function LineChartComponent({ data }: { data: LineChartData }) {
 
 export function BarChartComponent({ data }: { data: BarChartData }) {
   return (
-    <div className="chart bg-white lg:m-0 md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Bar Chart</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
@@ -109,7 +109,7 @@ export function BarChartComponent({ data }: { data: BarChartData }) {
 
 export function PieChartComponent({ data }: { data: PieChartData }) {
   return (
-    <div className="chart bg-white lg:m-0 md:m-5 m-10">
+    <div className="chart bg-white  md:m-5 m-10">
       <h2 className="text-center font-semibold">Pie Chart</h2>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>

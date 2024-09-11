@@ -44,7 +44,7 @@ export default function Dashboard() {
   return (
     <div className="">
       <Header />
-      <div className="max-w-[1200px]  mx-auto grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 mt-5">
+      <div className="max-w-[1200px]  mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
         <CandleStickChartComponent data={chartData.candlestick} />
         <LineChartComponent data={chartData.line} />
         <BarChartComponent data={chartData.bar} />
