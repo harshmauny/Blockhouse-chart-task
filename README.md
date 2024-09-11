@@ -8,9 +8,7 @@ Web Development Coding Test: Next.js Application with Django API Integration
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
+![image](https://github.com/user-attachments/assets/ebfe55ef-3c24-4444-8285-18fb4dd8a509)
 
 ## Run Locally
 
