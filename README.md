@@ -30,7 +30,7 @@ Clone the project or download the zip
 
 Genegrate a virtual environment
 ```bash
-  pip install venev
+  pip install venv
   python -m venv env
 ```
 
